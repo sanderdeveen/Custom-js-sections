@@ -893,3 +893,26 @@ class VariantRadios extends VariantSelects {
 }
 
 customElements.define('variant-radios', VariantRadios);
+
+
+// Footer accordion mobile 
+
+const footerTitles = document.querySelectorAll(".footer-block__heading");
+
+footerTitles.forEach((footerTitle) => {
+  const height = footerTitle.nextElementSibling.scrollHeight;
+  footerTitle.addEventListener("click", () => {
+    footerTitle.classList.toggle("collapsible--is-open");
+
+
+
+    if (footerTitle.classList.contains("collapsible--is-open")){
+      footerTitle.nextElementSibling.style.maxHeight = `${height}px`;
+    } else {
+      footerTitle.nextElementSibling.style.maxHeight = "0px";
+    }
+
+
+
+  });
+});
