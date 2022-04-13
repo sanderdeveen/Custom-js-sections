@@ -1,0 +1,29 @@
+{% if collection.template_suffix == "available-size" %}
+ 
+    <p>
+      {% for option in product.options %}
+        {% if option == 'Size' %}
+            {% if product.options_with_values[0].name=="Size" %}
+                {% for variant in product.variants %}
+ 
+                  {{ variant.option1  }}
+ 
+                {% endfor%}
+            {% elsif product.options_with_values[1].name=="Size" %}
+                {% for variant in product.variants %}
+ 
+                  {{ variant.option2  }}
+ 
+                {% endfor%}
+            {% else %}
+                {% for variant in product.variants %}
+ 
+                  {{ variant.option3  }}
+ 
+                {% endfor%}
+            {% endif %}
+ 
+        {% endif %}
+     {% endfor %}
+    </p>
+  {% endif %}
